@@ -1,4 +1,5 @@
 package server;
+import mutual.MessagingProtocol;
 
 public class ServerProtocol implements MessagingProtocol<Message> {
 
@@ -30,7 +31,7 @@ public class ServerProtocol implements MessagingProtocol<Message> {
 
 
     private String findHash(Message msg){
-        return helperFunctions.tryDeHash();
+        return helperFunctions.tryDeHash(new String(msg.originalStringEnd),new String(msg.originalStringEnd),new String(msg.hash));
     }
 
     /**

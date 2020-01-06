@@ -1,6 +1,9 @@
+import mutual.MessagingProtocol;
+
 import java.io.Closeable;
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.function.Supplier;
 
 public abstract class BaseServer<T> implements Closeable {
@@ -10,11 +13,7 @@ public abstract class BaseServer<T> implements Closeable {
     private final Supplier<MessageEncoderDecoder<T>> encdecFactory;
     private ServerSocket sock;
  
-    public BaseServer(
-            int port,
-            Supplier<MessagingProtocol<T>> protocolFactory,
-            Supplier<MessageEncoderDecoder<T>> encdecFactory) {
- 
+    public BaseServer(int port, Supplier<MessagingProtocol<T>> protocolFactory, Supplier<MessageEncoderDecoder<T>> encdecFactory) {
         this.port = port;
         this.protocolFactory = protocolFactory;
         this.encdecFactory = encdecFactory;

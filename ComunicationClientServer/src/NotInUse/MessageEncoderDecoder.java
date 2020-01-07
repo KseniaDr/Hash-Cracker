@@ -1,3 +1,4 @@
+package NotInUse;
 
 public interface MessageEncoderDecoder<T> {
 	/**

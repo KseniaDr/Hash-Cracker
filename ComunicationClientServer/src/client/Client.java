@@ -1,6 +1,6 @@
 package client;
 
-import server.HelperFunctions;
+import mutual.HelperFunctions;
 import message.Message;
 
 import java.io.IOException;
@@ -62,7 +62,7 @@ public class Client implements Runnable {
                 DatagramPacket packet = new DatagramPacket(receive, 0, receive.length);
                 socket.receive(packet);
                 Message offer = (Message) helperFunctions.toObject(packet.getData());
-                if (offer.type == 2)
+                if (offer.getType() == 2)
                     ServerAnswers.add(packet.getAddress());
 
             } catch (SocketTimeoutException e){
@@ -106,7 +106,7 @@ public class Client implements Runnable {
                 Message msg=(Message)helperFunctions.toObject(packet.getData());
                 if(msg.getType()==ack){
                     System.out.println("server: "+packet.getAddress().toString()+" found the hash original string!!");
-                    System.out.println("the original string is:"+msg.originalStringStart.toString());
+                    System.out.println("the original string is:"+msg.getOriginalStringStart().toString());
                 }
                 if(msg.getType()==nack){
                     System.out.println("server: "+packet.getAddress().toString()+" has not found the hash original string");

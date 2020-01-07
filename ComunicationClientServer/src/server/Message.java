@@ -1,12 +1,14 @@
 package server;
 
-public class Message {
+import java.io.Serializable;
 
-    char[] teamName = new char[32];
-    char type;
+public class Message implements Serializable {
+
+    public char[] teamName = new char[32];
+    public char type;
     char[] hash = new char[40];
     char originalLength;
-    char[] originalStringStart = new char[256];
+    public char[] originalStringStart = new char[256];
     char[] originalStringEnd = new char[256];
 
     public Message(char[] teamName, char type, char[] hash, char originalLength, char[] originalStringStart, char[] originalStringEnd){

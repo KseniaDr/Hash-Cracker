@@ -1,6 +1,8 @@
+package NotInUse;
+
 public class Message {
 
-    char[] teamName;
+    public char[] teamName;
     char type;
     char[] hash;
     char originalLength;
@@ -14,5 +16,9 @@ public class Message {
         this.originalLength = originalLength;
         this.originalStringStart = originalStringStart;
         this.originalStringEnd = originalStringEnd;
+    }
+
+    public char[] getTeamName() {
+        return teamName;
     }
 }

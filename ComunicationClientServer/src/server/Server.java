@@ -15,11 +15,12 @@ public class Server {
         //this.udpSocket = new DatagramSocket(port);
         this.protocol = protocol;
     }
+
     private void listen() throws Exception {
         System.out.println("-- Running Server at " + InetAddress.getLocalHost() + "--");
         String msg;
 
-        try(DatagramSocket socket = new DatagramSocket(port)){
+        try (DatagramSocket socket = new DatagramSocket(port)) {
             udpSocket = socket;
         }
 
@@ -34,6 +35,7 @@ public class Server {
             msg = new String(packet.getData()).trim();
 
             System.out.println(
-                    "Message from " + packet.getAddress().getHostAddress() + ": " + msg);
+                    "NotInUse.Message from " + packet.getAddress().getHostAddress() + ": " + msg);
         }
     }
+}

@@ -1,4 +1,5 @@
 package server;
+import message.Message;
 import mutual.MessagingProtocol;
 
 public class ServerProtocol implements MessagingProtocol<Message> {

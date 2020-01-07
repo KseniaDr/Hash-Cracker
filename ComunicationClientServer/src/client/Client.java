@@ -1,7 +1,7 @@
 package client;
 
 import server.HelperFunctions;
-import server.Message;
+import message.Message;
 
 import java.io.IOException;
 import java.net.*;
@@ -61,7 +61,7 @@ public class Client implements Runnable {
                 byte[] receive = new byte[65000];
                 DatagramPacket packet = new DatagramPacket(receive, 0, receive.length);
                 socket.receive(packet);
-                Message offer = (Message) HelperFunctions.toObject(packet.getData());
+                Message offer = (Message) helperFunctions.toObject(packet.getData());
                 if (offer.type == 2)
                     ServerAnswers.add(packet.getAddress());
 
@@ -84,7 +84,7 @@ public class Client implements Runnable {
         for(int i=0;i<strings.length;i+=2){
             Message msg=new Message(teamName.toCharArray(),request,hash.toCharArray(),strLength,strings[i].toCharArray(),strings[i+1].toCharArray());
             try {
-                byte[] send=HelperFunctions.toByteArray(msg);
+                byte[] send=helperFunctions.toByteArray(msg);
                 DatagramPacket packet=new DatagramPacket(send,send.length,serverOffers.remove(),serverPort);
                 socket.send(packet);
             } catch (IOException e) {
@@ -103,12 +103,12 @@ public class Client implements Runnable {
                 byte[] receive =new byte[65000];
                 DatagramPacket packet=new DatagramPacket(receive,0,receive.length);
                 socket.receive(packet);
-                Message msg=(Message)HelperFunctions.toObject(packet.getData());
-                if(msg.type==ack){
+                Message msg=(Message)helperFunctions.toObject(packet.getData());
+                if(msg.getType()==ack){
                     System.out.println("server: "+packet.getAddress().toString()+" found the hash original string!!");
                     System.out.println("the original string is:"+msg.originalStringStart.toString());
                 }
-                if(msg.type==nack){
+                if(msg.getType()==nack){
                     System.out.println("server: "+packet.getAddress().toString()+" has not found the hash original string");
                 }
             } catch (SocketException e) {

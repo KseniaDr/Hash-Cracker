@@ -1,13 +1,13 @@
-package server;
+package message;
 
 public class Message {
 
-    char[] teamName = new char[32];
+    char[] teamName;
     char type;
-    char[] hash = new char[40];
+    char[] hash;
     char originalLength;
-    char[] originalStringStart = new char[256];
-    char[] originalStringEnd = new char[256];
+    char[] originalStringStart;
+    char[] originalStringEnd;
 
     public Message(char[] teamName, char type, char[] hash, char originalLength, char[] originalStringStart, char[] originalStringEnd){
         this.teamName = teamName;
@@ -16,5 +16,13 @@ public class Message {
         this.originalLength = originalLength;
         this.originalStringStart = originalStringStart;
         this.originalStringEnd = originalStringEnd;
+    }
+
+    public char getType(){
+        return type;
+    }
+
+    public char[] getOriginalStringStart(){
+        return originalStringStart;
     }
 }

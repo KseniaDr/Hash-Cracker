@@ -1,4 +1,4 @@
-package server;
+package mutual;
 
 import java.io.*;
 import java.math.BigInteger;

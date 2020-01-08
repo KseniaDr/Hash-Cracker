@@ -1,17 +1,19 @@
 package server;
 
 import message.Message;
+import mutual.HelperFunctions;
 
 import java.io.IOException;
 import java.net.*;
 
-public class Server implements Runnable {
+public class Server {
     private DatagramSocket udpSocket;
     private final int port = 3117;
     //private InetAddress ipBroadcast;
     private final ServerProtocol protocol;
     private boolean isClosed;
     private final int messageSizeInBytes = 586;
+    private HelperFunctions helperFunctions;
 
 
     public Server() {
@@ -22,6 +24,7 @@ public class Server implements Runnable {
         }
         protocol = new ServerProtocol(this);
         isClosed = false;
+        helperFunctions = new HelperFunctions();
     }
 
 
@@ -36,14 +39,16 @@ public class Server implements Runnable {
                 byte[] arrayIn = new byte[messageSizeInBytes];
                 DatagramPacket packet = new DatagramPacket(arrayIn, arrayIn.length);
                 udpSocket.receive(packet);// waits for a request message
-                Message msg = new Message(packet.getData());
-                String senderIPAddress = "" + packet.getAddress().toString();
+                Message msg1 = (Message) HelperFunctions.toObject(packet.getData());
+                String senderIPAddress = packet.getAddress().toString().substring(1);
                 String senderPort = "" + packet.getPort();
-                ServerProtocol protocolPerClient = new ServerProtocol(this, msg,senderIPAddress,senderPort);
+                ServerProtocol protocolPerClient = new ServerProtocol(this, msg1, senderIPAddress, senderPort);
                 Thread threadPerClient = new Thread(protocolPerClient);
                 threadPerClient.start();// runs the 'run' method
             }
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -56,42 +61,56 @@ public class Server implements Runnable {
      * @param clientIPAddress - sender IP address
      * @param clientPort      - sender port
      */
-    public void sendOffer(Message offer, InetAddress clientIPAddress, int clientPort) {
+    public void sendOffer(Message offer, String clientIPAddress, String clientPort) {
         byte[] arrayOut = new byte[257];
-        String localIP = udpSocket.getLocalAddress().toString(); //for DEBUG mode
-
-        for (int i = 0; i < arrayOut.length - 1; i++)
-            arrayOut[i] = (byte) offer.getTeamName()[i];
-        arrayOut[256] = (byte) offer.getType();
-
-        DatagramPacket offerPacket = new DatagramPacket(arrayOut, arrayOut.length, clientIPAddress, clientPort);
         try {
-            udpSocket.send(offerPacket);//send the message back to the client
+            arrayOut = HelperFunctions.toByteArray(offer);
+            DatagramPacket offerPacket = null;
+            try {
+                offerPacket = new DatagramPacket(arrayOut, arrayOut.length, InetAddress.getByName(clientIPAddress), Integer.parseInt(clientPort));
+                try {
+                    udpSocket.send(offerPacket);//send the message back to the client
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        String localIP = udpSocket.getLocalAddress().toString(); //for DEBUG mode
+
+
     }
 
     /**
      * Sends the server answer for the hash request of the sender.
-     * @param answer - the answer message to the sender.
+     *
+     * @param answer        - the answer message to the sender.
      * @param destIPAddress - IP address of the sender.
-     * @param destPort - port of the sender.
+     * @param destPort      - port of the sender.
      */
-    public void send(Message answer, String destIPAddress, String destPort){
-        byte[] toSend = answer.messageToByteArray();
-        InetAddress ipToSend;
+    public void send(Message answer, String destIPAddress, String destPort) {
+        byte[] toSend = new byte[0];
         try {
-            ipToSend = InetAddress.getByName(destIPAddress);
-            DatagramPacket sendPacket = new DatagramPacket(toSend,toSend.length,ipToSend,Integer.parseInt(destPort));
+            toSend = HelperFunctions.toByteArray(answer);
+            InetAddress ipToSend;
             try {
-                udpSocket.send(sendPacket);
-            } catch (IOException e) {
+                ipToSend = InetAddress.getByName(destIPAddress);
+                DatagramPacket sendPacket = new DatagramPacket(toSend, toSend.length, ipToSend, Integer.parseInt(destPort));
+                try {
+                    udpSocket.send(sendPacket);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } catch (UnknownHostException e) {
                 e.printStackTrace();
             }
-        } catch (UnknownHostException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     /**
@@ -99,8 +118,8 @@ public class Server implements Runnable {
      * when a message is received sends an OFFER message back to the sender.
      * The method is blocked till a message is received.
      */
-    @Override
-    public void run() {
+    //@Override
+    /*public void run() {
         while (isClosed == false) {//for broadcast requests
             byte[] arrayIn = new byte[messageSizeInBytes];
             DatagramPacket broadcastPacket = new DatagramPacket(arrayIn, arrayIn.length);
@@ -113,7 +132,7 @@ public class Server implements Runnable {
                 e.printStackTrace();
             }
         }
-    }
+    }*/
 
 /*
     private Message createMessage(byte[] inPacket) {

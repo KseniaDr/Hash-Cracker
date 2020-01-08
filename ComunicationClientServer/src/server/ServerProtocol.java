@@ -31,7 +31,7 @@ public class ServerProtocol implements MessagingProtocol<Message>, Runnable {
             case 3: //request message
                 String foundHash = findHash(msg);
                 if (foundHash != null)
-                    return new Message(msg.getTeamName(),(char)4,convertStringToArrayChar(foundHash),msg.getOriginalLength(),msg.getOriginalStringStart(),msg.getOriginalStringEnd());
+                    return new Message(msg.getTeamName(),(char)4,msg.getHash(),msg.getOriginalLength(),convertStringToArrayChar(foundHash),msg.getOriginalStringEnd());
                 else
                     return new Message(msg.getTeamName(),(char)5,new char[0],msg.getOriginalLength(),new char[0],new char[0]);
         }
@@ -62,6 +62,9 @@ public class ServerProtocol implements MessagingProtocol<Message>, Runnable {
 
     @Override
     public void run() {
-        server.send(process(reqMessage),destIPAddress, destPort);
+        if(reqMessage.getType() == 1)
+            server.sendOffer(process(reqMessage),destIPAddress, destPort);
+        else
+            server.send(process(reqMessage),destIPAddress, destPort);
     }
 }

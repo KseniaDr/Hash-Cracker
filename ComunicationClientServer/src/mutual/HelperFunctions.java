@@ -9,7 +9,7 @@ public class HelperFunctions {
 
     public HelperFunctions(){}
 
-    private String hash(String toHash) {
+    public String hash(String toHash) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-1");
             byte[] messageDigest = md.digest(toHash.getBytes());

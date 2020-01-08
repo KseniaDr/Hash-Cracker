@@ -18,6 +18,7 @@ public class Client implements Runnable {
 
     public Client(int port) {
         this.clientPort = port;
+        helperFunctions = new HelperFunctions();
     }
 
 
@@ -32,7 +33,7 @@ public class Client implements Runnable {
             sendDiscover(socket);
             LinkedList<InetAddress> ServerOffers = WaitForOffer(socket);
             sendRequests(ServerOffers,socket,length,hash);
-            waitforAcks(socket);
+            waitforAcks(socket,length);
 
         } catch (SocketException e) {
             e.printStackTrace();
@@ -95,7 +96,7 @@ public class Client implements Runnable {
         }
     }
 
-    private void waitforAcks(DatagramSocket socket){
+    private void waitforAcks(DatagramSocket socket,int length){
         char ack=4;
         char nack=5;
         Boolean moreAcks=true;
@@ -108,7 +109,10 @@ public class Client implements Runnable {
                 Message msg=(Message)helperFunctions.toObject(packet.getData());
                 if(msg.getType()==ack){
                     System.out.println("server: "+packet.getAddress().toString()+" found the hash original string!!");
-                    System.out.println("the original string is:"+msg.getOriginalStringStart().toString());
+                    System.out.println("the original string is:");
+                    for(int i=0;i<length;i++){
+                        System.out.print(msg.getOriginalStringStart()[i]);
+                    }
                     moreAcks=false;
                 }
                 if(msg.getType()==nack){

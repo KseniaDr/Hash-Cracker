@@ -1,19 +1,18 @@
-import mutual.HelperFunctions;
+import client.Client;
 import server.Server;
 
 public class Main {
     public static void main(String[] args){
-        HelperFunctions helperFunctions = new HelperFunctions();
-        String[] strings=helperFunctions.divideToDomains(6,2);
-       // Client client = new Client(1111);
-        for(int i=0;i<strings.length;i++){
-            System.out.println(strings[i]);
-        }
+        Client client = new Client(1111);
+        Thread client1 = new Thread(client);
             Server server = new Server();
-            Thread listener = new Thread(server); //for new discover requests
-            listener.start();
+           // Thread listener = new Thread(server); //for new discover requests
+           // listener.start();
+        client1.start();
             server.listen();
 
+      //  String hash=helperFunctions.hash("ab");
+      //  System.out.println(hash);
 
     }
 }

@@ -26,14 +26,14 @@ public class ServerProtocol implements MessagingProtocol<Message>, Runnable {
     @Override
     public Message process(Message msg) {
         switch (msg.getType()){
-            case '1': //discover message
-                return new Message(msg.getTeamName(),'2', new char[0],'0', new char[0], new char[0]);
-            case '3': //request message
+            case 1: //discover message
+                return new Message(msg.getTeamName(),(char)2, new char[0],'0', new char[0], new char[0]);
+            case 3: //request message
                 String foundHash = findHash(msg);
                 if (foundHash != null)
-                    return new Message(msg.getTeamName(),'4',convertStringToArrayChar(foundHash),msg.getOriginalLength(),msg.getOriginalStringStart(),msg.getOriginalStringEnd());
+                    return new Message(msg.getTeamName(),(char)4,convertStringToArrayChar(foundHash),msg.getOriginalLength(),msg.getOriginalStringStart(),msg.getOriginalStringEnd());
                 else
-                    return new Message(msg.getTeamName(),'5',new char[0],msg.getOriginalLength(),new char[0],new char[0]);
+                    return new Message(msg.getTeamName(),(char)5,new char[0],msg.getOriginalLength(),new char[0],new char[0]);
         }
         return null;
     }

@@ -42,7 +42,6 @@ public class Server implements Runnable {
                 ServerProtocol protocolPerClient = new ServerProtocol(this, msg,senderIPAddress,senderPort);
                 Thread threadPerClient = new Thread(protocolPerClient);
                 threadPerClient.start();// runs the 'run' method
-
             }
         } catch (IOException e) {
             e.printStackTrace();

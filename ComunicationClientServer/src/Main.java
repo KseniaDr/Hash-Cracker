@@ -1,4 +1,3 @@
-import client.Client;
 import mutual.HelperFunctions;
 import server.Server;
 
@@ -6,7 +5,7 @@ public class Main {
     public static void main(String[] args){
         HelperFunctions helperFunctions = new HelperFunctions();
         String[] strings=helperFunctions.divideToDomains(6,2);
-        Client client = new Client(1111);
+       // Client client = new Client(1111);
         for(int i=0;i<strings.length;i++){
             System.out.println(strings[i]);
         }

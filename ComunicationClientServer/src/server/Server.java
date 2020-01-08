@@ -7,9 +7,8 @@ import java.net.*;
 
 public class Server implements Runnable {
     private DatagramSocket udpSocket;
-    private DatagramSocket broadcastSocket;
     private final int port = 3117;
-    private InetAddress ipBroadcast;
+    //private InetAddress ipBroadcast;
     private final ServerProtocol protocol;
     private boolean isClosed;
     private final int messageSizeInBytes = 586;
@@ -17,13 +16,8 @@ public class Server implements Runnable {
 
     public Server() {
         try {
-            ipBroadcast = InetAddress.getByName("255.255.255.255");
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
-        try {
             udpSocket = new DatagramSocket(port);
-            broadcastSocket = new DatagramSocket(port, ipBroadcast);
+
         } catch (SocketException e) {
             e.printStackTrace();
         }
@@ -42,6 +36,7 @@ public class Server implements Runnable {
             while (true) {
                 byte[] arrayIn = new byte[messageSizeInBytes];
                 DatagramPacket packet = new DatagramPacket(arrayIn, arrayIn.length);
+                udpSocket.setBroadcast(false);
                 udpSocket.receive(packet);// waits for a request message
                 Message msg = new Message(packet.getData());
                 String senderIPAddress = "" + packet.getAddress().toString();
@@ -74,6 +69,7 @@ public class Server implements Runnable {
 
         DatagramPacket offerPacket = new DatagramPacket(arrayOut, arrayOut.length, clientIPAddress, clientPort);
         try {
+            udpSocket.setBroadcast(false); //send from local IP
             udpSocket.send(offerPacket);//send the message back to the client
         } catch (IOException e) {
             e.printStackTrace();
@@ -93,6 +89,7 @@ public class Server implements Runnable {
             ipToSend = InetAddress.getByName(destIPAddress);
             DatagramPacket sendPacket = new DatagramPacket(toSend,toSend.length,ipToSend,Integer.parseInt(destPort));
             try {
+                udpSocket.setBroadcast(false);
                 udpSocket.send(sendPacket);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -111,11 +108,10 @@ public class Server implements Runnable {
     public void run() {
         while (isClosed == false) {//for broadcast requests
             byte[] arrayIn = new byte[messageSizeInBytes];
-
             DatagramPacket broadcastPacket = new DatagramPacket(arrayIn, arrayIn.length);
-
             try {//block till there is a a broadcast request
-                broadcastSocket.receive(broadcastPacket);
+                udpSocket.setBroadcast(true);
+                udpSocket.receive(broadcastPacket);
                 Message discoverMsg = new Message(arrayIn);
                 if (discoverMsg != null)
                     sendOffer(protocol.process(discoverMsg), broadcastPacket.getAddress(), broadcastPacket.getPort());

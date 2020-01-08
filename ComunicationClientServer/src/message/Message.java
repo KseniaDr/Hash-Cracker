@@ -12,9 +12,7 @@ public class Message implements Serializable {
      private char[] originalStringStart;
      private char[] originalStringEnd;
      public final int maxSizeOfTeamName = 32;
-     //public final int maxSizeOfType = 1;
      public final int maxSizeOfHash = 40;
-   //  public final int maxSizeOfOriginalLength = 1;
      public final int maxSizeOfOriginalStringStartNEnds = 256;
 
     public Message(char[] teamName, char type, char[] hash, char originalLength, char[] originalStringStart, char[] originalStringEnd){

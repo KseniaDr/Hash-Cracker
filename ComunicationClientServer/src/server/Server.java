@@ -12,7 +12,7 @@ public class Server {
     //private InetAddress ipBroadcast;
     private final ServerProtocol protocol;
     private boolean isClosed;
-    private final int messageSizeInBytes = 586;
+    private final int messageSizeInBytes = 587;
     private HelperFunctions helperFunctions;
 
 
@@ -37,14 +37,17 @@ public class Server {
         try {
             while (true) {
                 byte[] arrayIn = new byte[messageSizeInBytes];
-                DatagramPacket packet = new DatagramPacket(arrayIn, arrayIn.length);
+                DatagramPacket packet = new DatagramPacket(arrayIn, 0,arrayIn.length);
                 udpSocket.receive(packet);// waits for a request message
                 Message msg1 = (Message) HelperFunctions.toObject(packet.getData());
                 String senderIPAddress = packet.getAddress().toString().substring(1);
                 String senderPort = "" + packet.getPort();
+                for (int i=0; i< msg1.getTeamName().length; i++)
+                    System.out.print(msg1.getTeamName()[i]);
                 ServerProtocol protocolPerClient = new ServerProtocol(this, msg1, senderIPAddress, senderPort);
                 Thread threadPerClient = new Thread(protocolPerClient);
                 threadPerClient.start();// runs the 'run' method
+
             }
         } catch (IOException e) {
             e.printStackTrace();

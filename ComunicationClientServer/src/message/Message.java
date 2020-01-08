@@ -28,12 +28,12 @@ public class Message implements Serializable {
         String byteToString;
         try {
             byteToString = new String(bytesForMessage, "UTF-8");
-            teamName = getCharArray(byteToString, maxSizeOfTeamName, false);
-            type = getChar(byteToString);
-            hash = getCharArray(byteToString, maxSizeOfHash, false);
-            originalLength = getChar(byteToString);
-            originalStringStart = getCharArray(byteToString,maxSizeOfOriginalStringStartNEnds,false);
-            originalStringEnd = getCharArray(byteToString,maxSizeOfOriginalStringStartNEnds,true);
+            teamName = getCharArray(byteToString, maxSizeOfTeamName,0);
+            type = getChar(byteToString,maxSizeOfTeamName);
+            hash = getCharArray(byteToString, maxSizeOfHash,maxSizeOfTeamName+1);
+            originalLength = getChar(byteToString,74);
+            originalStringStart = getCharArray(byteToString,maxSizeOfOriginalStringStartNEnds,75);
+            originalStringEnd = getCharArray(byteToString,maxSizeOfOriginalStringStartNEnds,331);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -64,18 +64,15 @@ public class Message implements Serializable {
         return originalStringEnd;
     }
 
-    private char getChar(String toCut){
-        char answer = toCut.charAt(0);
-        toCut.substring(1);
+    private char getChar(String toCut,int index){
+        char answer = toCut.charAt(index);
         return answer;
     }
 
-    private char[] getCharArray(String toCut, int size, boolean lastArray){
+    private char[] getCharArray(String toCut, int size,int index){
         char[] answer = new char[size];
         for (int i=0; i < size ; i++)
-            answer[i] = toCut.charAt(i);
-        if (lastArray == false)
-            toCut.substring(size+1);
+            answer[i] = toCut.charAt(i+index);
         return answer;
     }
 

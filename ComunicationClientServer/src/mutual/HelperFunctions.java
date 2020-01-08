@@ -1,5 +1,7 @@
 package mutual;
 
+import message.Message;
+
 import java.io.*;
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -98,28 +100,15 @@ public class HelperFunctions {
 
     // toByteArray and toObject are taken from: http://tinyurl.com/69h8l7x
     public static byte[] toByteArray(Object obj) throws IOException {
-        byte[] bytes = null;
-        ByteArrayOutputStream bos = null;
-        ObjectOutputStream oos = null;
-        try {
-            bos = new ByteArrayOutputStream();
-            oos = new ObjectOutputStream(bos);
-            oos.writeObject(obj);
-            oos.flush();
-            bytes = bos.toByteArray();
-        } finally {
-            if (oos != null) {
-                oos.close();
-            }
-            if (bos != null) {
-                bos.close();
-            }
-        }
-        return bytes;
+        Message msg = (Message)obj;
+        byte[] ans = msg.messageToByteArray();
+        return ans;
     }
 
     public static Object toObject(byte[] bytes) throws IOException, ClassNotFoundException {
-        Object obj = null;
+        Message ans = new Message(bytes);
+        return ans;
+        /*Object obj = null;
         ByteArrayInputStream bis = null;
         ObjectInputStream ois = null;
         try {
@@ -134,7 +123,7 @@ public class HelperFunctions {
                 ois.close();
             }
         }
-        return obj;
+        return obj;*/
     }
 
     public static String toString(byte[] bytes) {

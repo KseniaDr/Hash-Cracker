@@ -43,14 +43,20 @@ public class Client implements Runnable {
 
     private void sendDiscover(DatagramSocket socket) {
         char discover = 1;
-        Message msg = new Message(teamName.toCharArray(), discover, "".toCharArray(), discover, "".toCharArray(), "".toCharArray());
         try {
-            byte[] send = HelperFunctions.toByteArray(msg);
-            DatagramPacket packet = new DatagramPacket(send, send.length,InetAddress.getByName("255.255.255.255") , serverPort);
-            socket.send(packet);
-        } catch (IOException e) {
+            socket.setBroadcast(true);
+            Message msg = new Message(teamName.toCharArray(), discover, "".toCharArray(), discover, "".toCharArray(), "".toCharArray());
+            try {
+                byte[] send = HelperFunctions.toByteArray(msg);
+                DatagramPacket packet = new DatagramPacket(send, send.length,InetAddress.getByName("255.255.255.255") , serverPort);
+                socket.send(packet);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (SocketException e) {
             e.printStackTrace();
         }
+
     }
 
     private LinkedList<InetAddress> WaitForOffer(DatagramSocket socket) {
@@ -59,10 +65,11 @@ public class Client implements Runnable {
         // now we wait for response
         while (moreOffers) {
             try {
-                socket.setSoTimeout(1000);
+                socket.setSoTimeout(100000);
                 byte[] receive = new byte[65000];
                 DatagramPacket packet = new DatagramPacket(receive, 0, receive.length);
                 socket.receive(packet);
+                System.out.println(packet.getAddress());
                 Message offer = (Message) helperFunctions.toObject(packet.getData());
                 if (offer.getType() == 2)
                     ServerAnswers.add(packet.getAddress());

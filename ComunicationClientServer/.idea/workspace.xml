@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7625971a-8819-461d-b02c-b04d91dc399f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/message/DiscoverMsg.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/message/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/message/Message.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/server/ServerProtocol.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/server/ServerProtocol.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/message/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mutual/HelperFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mutual/HelperFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/ServerProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerProtocol.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/ServerProtocol.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="33" column="78" selection-start-line="33" selection-start-column="78" selection-end-line="33" selection-end-column="78" />
+            <state relative-caret-position="543">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1522#1523#0" expanded="true" />
@@ -39,23 +35,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="189">
+              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2268">
-              <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
+            <state relative-caret-position="105">
+              <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,27 +59,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mutual/HelperFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+            <state relative-caret-position="44">
+              <caret line="108" selection-start-line="108" selection-end-line="108" />
               <folding>
-                <element signature="method#hash#0;class#HelperFunctions#0" />
-                <element signature="e#265#682#0" />
-                <element signature="e#576#632#1" />
-                <element signature="e#725#779#0" />
-                <element signature="method#convertStringToInt#0;class#HelperFunctions#0" />
-                <element signature="e#1464#1622#1" />
-                <element signature="e#1500#1561#1" />
-                <element signature="method#converxtIntToString#0;class#HelperFunctions#0" />
-                <element signature="e#1802#1944#1" />
-                <element signature="e#1971#2034#1" />
-                <element signature="method#divideToDomains#0;class#HelperFunctions#0" />
-                <element signature="e#2363#2447#1" />
-                <element signature="e#2778#3037#1" />
-                <element signature="method#toByteArray#0;class#HelperFunctions#0" />
-                <element signature="e#3337#3540#0" />
-                <element signature="e#3549#3708#0" />
-                <element signature="e#3580#3624#1" />
-                <element signature="e#3654#3698#1" />
+                <element signature="e#3952#3953#0" expanded="true" />
+                <element signature="e#3992#3993#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1070">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="106">
+              <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/message/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="735">
+              <caret line="35" column="95" selection-start-line="35" selection-start-column="95" selection-end-line="35" selection-end-column="95" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#652#653#0" expanded="true" />
@@ -144,6 +121,7 @@
       <find>toB</find>
       <find>broadcast</find>
       <find>sendR</find>
+      <find>local</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,12 +141,12 @@
         <option value="$PROJECT_DIR$/src/BaseServer.java" />
         <option value="$PROJECT_DIR$/src/server/Message.java" />
         <option value="$PROJECT_DIR$/src/message/DiscoverMsg.java" />
-        <option value="$PROJECT_DIR$/src/message/Message.java" />
-        <option value="$PROJECT_DIR$/src/mutual/HelperFunctions.java" />
-        <option value="$PROJECT_DIR$/src/server/Server.java" />
         <option value="$PROJECT_DIR$/src/server/ServerProtocol.java" />
         <option value="$PROJECT_DIR$/src/client/Client.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/mutual/HelperFunctions.java" />
+        <option value="$PROJECT_DIR$/src/message/Message.java" />
+        <option value="$PROJECT_DIR$/src/server/Server.java" />
       </list>
     </option>
   </component>
@@ -225,7 +203,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578500649303" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578510400354" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/spl-net" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -299,7 +277,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38434000" />
+    <option name="totallyTimeSpent" value="47246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -319,8 +297,8 @@
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.05529226" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.5529226" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.31753555" />
+      <window_info active="true" anchor="bottom" id="Debug" order="8" visible="true" weight="0.48815167" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.328594" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -341,7 +319,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.15812592" />
+      <window_info content_ui="combo" id="Project" order="5" weight="0.15812592" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" />
@@ -350,8 +328,8 @@
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.38388625" />
-      <window_info active="true" anchor="bottom" id="Debug" order="8" visible="true" weight="0.5529226" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.31753555" />
+      <window_info active="true" anchor="bottom" id="Debug" order="8" visible="true" weight="0.48815167" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.328594" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -425,7 +403,7 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/client/Client.java</url>
-          <line>82</line>
+          <line>89</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -435,14 +413,52 @@
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/server/Server.java</url>
-          <line>69</line>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/client/Client.java</url>
+          <line>50</line>
           <properties />
-          <option name="timeStamp" value="13" />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/mutual/HelperFunctions.java</url>
+          <line>103</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/server/Server.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="maxSizeOfTeamName+maxSizeOfHash" language="JAVA" />
+        <watch expression="maxSizeOfTeamName+1" language="JAVA" />
+        <watch expression="maxSizeOfTeamName+maxSizeOfHash+1" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>maxSizeOfTeamName+1</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>maxSizeOfTeamName+maxSizeOfHash+1</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>maxSizeOfTeamName+maxSizeOfHash</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/server/MessageType.java">
@@ -511,10 +527,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/ServerProtocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1522#1523#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mutual/HelperFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
+          <folding>
+            <element signature="e#3952#3953#0" expanded="true" />
+            <element signature="e#3992#3993#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/message/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="735">
+          <caret line="35" column="95" selection-start-line="35" selection-start-column="95" selection-end-line="35" selection-end-column="95" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#652#653#0" expanded="true" />
@@ -533,68 +588,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mutual/HelperFunctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding>
-            <element signature="method#hash#0;class#HelperFunctions#0" />
-            <element signature="e#265#682#0" />
-            <element signature="e#576#632#1" />
-            <element signature="e#725#779#0" />
-            <element signature="method#convertStringToInt#0;class#HelperFunctions#0" />
-            <element signature="e#1464#1622#1" />
-            <element signature="e#1500#1561#1" />
-            <element signature="method#converxtIntToString#0;class#HelperFunctions#0" />
-            <element signature="e#1802#1944#1" />
-            <element signature="e#1971#2034#1" />
-            <element signature="method#divideToDomains#0;class#HelperFunctions#0" />
-            <element signature="e#2363#2447#1" />
-            <element signature="e#2778#3037#1" />
-            <element signature="method#toByteArray#0;class#HelperFunctions#0" />
-            <element signature="e#3337#3540#0" />
-            <element signature="e#3549#3708#0" />
-            <element signature="e#3580#3624#1" />
-            <element signature="e#3654#3698#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/ServerProtocol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="33" column="78" selection-start-line="33" selection-start-column="78" selection-end-line="33" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1522#1523#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1070">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2268">
-          <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        <state relative-caret-position="105">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

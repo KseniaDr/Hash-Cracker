@@ -14,6 +14,7 @@ public class Client implements Runnable {
     private final int timeOut = 15000;
     private final int serverPort = 3117;
     private HelperFunctions helperFunctions;
+    private int NumOfServerOffers;
 
     public Client(int port) {
         this.clientPort = port;
@@ -57,7 +58,7 @@ public class Client implements Runnable {
         // now we wait for response
         while (moreOffers) {
             try {
-                socket.setSoTimeout(timeOut);
+                socket.setSoTimeout(1000);
                 byte[] receive = new byte[65000];
                 DatagramPacket packet = new DatagramPacket(receive, 0, receive.length);
                 socket.receive(packet);
@@ -78,6 +79,7 @@ public class Client implements Runnable {
         return ServerAnswers;
     }
     private void sendRequests(LinkedList<InetAddress> serverOffers,DatagramSocket socket,int length,String hash){
+        NumOfServerOffers=serverOffers.size();
         char request=3;
         char strLength=(char)length;
         String[] strings=helperFunctions.divideToDomains(length,serverOffers.size());
@@ -107,11 +109,21 @@ public class Client implements Runnable {
                 if(msg.getType()==ack){
                     System.out.println("server: "+packet.getAddress().toString()+" found the hash original string!!");
                     System.out.println("the original string is:"+msg.getOriginalStringStart().toString());
+                    moreAcks=false;
                 }
                 if(msg.getType()==nack){
                     System.out.println("server: "+packet.getAddress().toString()+" has not found the hash original string");
+                    NumOfServerOffers--;
                 }
-            } catch (SocketException e) {
+            } catch (SocketTimeoutException e){
+                System.out.println("server timeout");
+                e.printStackTrace();
+                NumOfServerOffers--;
+                if(NumOfServerOffers == 0)
+                    moreAcks=false;
+
+            }
+            catch (SocketException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();

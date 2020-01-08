@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6080155a-7bd0-4256-81db-dd1121267c2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/BaseServer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/BaseServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/BlockingConnectionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/MessageEncoderDecoder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/MessagingProtocol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NotInUse/BaseServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NotInUse/BaseServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NotInUse/BlockingConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NotInUse/BlockingConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NotInUse/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NotInUse/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NotInUse/MessageEncoderDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NotInUse/MessageEncoderDecoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/HelperFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/HelperFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +26,11 @@
   </component>
   <component name="ProjectId" id="1W4I7GnkdWRgBK1kMwtcjxmidnL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -90,13 +82,21 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7625971a-8819-461d-b02c-b04d91dc399f" name="Default Changelist" comment="" />
+      <changelist id="6080155a-7bd0-4256-81db-dd1121267c2f" name="Default Changelist" comment="" />
       <created>1578301329848</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578301329848</updated>
       <workItem from="1578301339783" duration="9778000" />
     </task>
+    <task id="LOCAL-00001" summary="client v3">
+      <created>1578402445585</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578402445585</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -105,11 +105,19 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="client v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="client v3" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="618" y="302" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1578388334189">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="302" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1578388334189" />
+    <state x="321" y="8" key="CommitChangelistDialog2" timestamp="1578402444780">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="321" y="8" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1578402444780" />
     <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1578396312402">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -142,10 +150,19 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1578396312402" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1578402279911">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1578402454515">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1578402454515" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1578494474066">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1578402279911" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1578494474066" />
+    <state x="486" y="205" key="git4idea.merge.GitPullDialog" timestamp="1578494694844">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="486" y="205" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1578494694844" />
     <state x="615" y="148" width="672" height="678" key="search.everywhere.popup" timestamp="1578392860797">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

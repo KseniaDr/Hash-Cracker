@@ -27,6 +27,15 @@ public class HelperFunctions {
         }
     }
 
+    private int sizeOfString(String s){
+        char c = s.charAt(0);
+        int ans = 0;
+        while(c != 0) {
+            ans++;
+            c = s.charAt(ans);
+        }
+        return ans;
+    }
     public String tryDeHash(String startRange, String endRange, String originalHash){
         int start = convertStringToInt(startRange);
         int end = convertStringToInt(endRange);
@@ -45,11 +54,14 @@ public class HelperFunctions {
         char[] charArray = toConvert.toCharArray();
         int num = 0;
         for(char c : charArray){
-            if(c < 'a' || c > 'z'){
-                throw new RuntimeException();
-            }
-            num *= 26;
-            num += c - 'a';
+
+                if (c < 'a' || c > 'z') {
+                   throw new RuntimeException();
+                }
+
+                num *= 26;
+                num += c - 'a';
+
         }
         return num;
     }

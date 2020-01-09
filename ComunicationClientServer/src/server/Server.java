@@ -42,13 +42,14 @@ public class Server {
                 Message msg1 = (Message) HelperFunctions.toObject(packet.getData());
                 String senderIPAddress = packet.getAddress().toString().substring(1);
                 String senderPort = "" + packet.getPort();
-                for (int i=0; i< msg1.getTeamName().length; i++)
-                    System.out.print(msg1.getTeamName()[i]);
                 ServerProtocol protocolPerClient = new ServerProtocol(this, msg1, senderIPAddress, senderPort);
                 Thread threadPerClient = new Thread(protocolPerClient);
                 threadPerClient.start();// runs the 'run' method
 
             }
+
+        } catch(SocketTimeoutException e){
+            System.out.println("time is out");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

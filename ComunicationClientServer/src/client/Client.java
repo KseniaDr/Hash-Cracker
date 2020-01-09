@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Client implements Runnable {
     private final int clientPort;
-    private final String teamName = "shahar & the roaches";
+    private final String teamName = "shaharCyberKseniaCyberShaharCybefff";
     private final int timeOut = 15000;
     private final int serverPort = 3117;
     private HelperFunctions helperFunctions;
@@ -65,7 +65,7 @@ public class Client implements Runnable {
         // now we wait for response
         while (moreOffers) {
             try {
-                socket.setSoTimeout(100000);
+                socket.setSoTimeout(1000);
                 byte[] receive = new byte[65000];
                 DatagramPacket packet = new DatagramPacket(receive, 0, receive.length);
                 socket.receive(packet);

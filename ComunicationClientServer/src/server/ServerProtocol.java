@@ -45,7 +45,16 @@ public class ServerProtocol implements MessagingProtocol<Message>, Runnable {
 
 
     private String findHash(Message msg){
-        return helperFunctions.tryDeHash(new String(msg.getOriginalStringStart()),new String(msg.getOriginalStringEnd()),new String(msg.getHash()));
+        return helperFunctions.tryDeHash(buildString(msg.getOriginalStringStart()),buildString(msg.getOriginalStringEnd()),buildString(msg.getHash()));
+    }
+    private String buildString(char[] array){
+        String ans = "";
+        for (int i=0; i<array.length; i++){
+            if(array[i] == 0)
+                break;
+            ans = ans + array[i];
+        }
+        return ans;
     }
 
     /**

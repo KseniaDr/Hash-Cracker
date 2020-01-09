@@ -77,17 +77,25 @@ public class Message implements Serializable {
     }
 
     public byte[] messageToByteArray(){
-        byte[] answer = new byte[586];
+        byte[] answer = new byte[587];
         for (int i = 0; i < teamName.length; i++)
             answer[i] = (byte)teamName[i];
         answer[32] = (byte)type;
-        for (int i = 0, j = 33; i < hash.length ; i++, j++ )
+        for (int i = 0, j = 33; i < hash.length ; i++, j++)
             answer[j] = (byte) hash[i];
         answer[74] = (byte)originalLength;
-        for (int i = 0, j = 75; i < originalStringStart.length; i++, j++)
-            answer[j] = (byte)originalStringStart[i];
-        for (int i = 0, j = 331; i < originalStringEnd.length; i++, j++)
-            answer[j] = (byte) originalStringEnd[i];
+        for (int i = 0, j = 75; i < 256; i++, j++) {
+            if(i<originalStringStart.length)
+                answer[j] = (byte) originalStringStart[i];
+            else
+                answer[j] = (byte) 0;
+        }
+        for (int i = 0, j = 331; i < 256; i++, j++) {
+            if(i<originalStringEnd.length)
+                answer[j] = (byte) originalStringEnd[i];
+            else
+                answer[j] = (byte) 0;
+        }
         return answer;
     }
 
